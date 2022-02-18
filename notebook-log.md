@@ -10,3 +10,5 @@ Data already have:
 5) bartpnella rochalimae
 
 QC software: FastQC
+
+Problem: still confuse of how to run FastQC
