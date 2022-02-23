@@ -1,25 +1,25 @@
-2/17
-object of study: fliY gene of bacillus family
-database: UniProt
+# 2/17
+## object of study: fliY gene of bacillus family
+## database: UniProt
 
-Data already have:
+### Data already have:
 1) Bacillus beveridgei
 2) bacillus horikoshii
 3) bacillus altitudines
 4) bacillus stratosphericus
 5) bartpnella rochalimae
 
-QC software: FastQC
+### QC software: FastQC
 
 Problem: still confuse of how to run FastQC
 
-2/18
-try to use clustalw
-code:
+# 2/18
+## try to use clustalw
+### code:
 grep ">" fily.fasta
 ~/desktop/software/clustalw2 -ALIGN -INFILE=fily.fasta -OUTFILE=fily-aligned.fasta -OUTPUT=PHYLIP
 
-result:
+### result:
 CLUSTAL 2.1 Multiple Sequence Alignments
 
 
@@ -62,3 +62,16 @@ Group 5:                     Delayed
 Alignment Score 14891
 
 [fily-aligned.fasta]
+
+# 2/23
+## Try to use MUSCLE
+
+### first try
+code:
+$ pwd
+$ cd desktop/data/fily
+$ ~/desktop/software/muscle5.1.win64.exe -in fily.fasta -out fily-muscle-aligned.fasta
+
+### result
+false: unknown option in
+
