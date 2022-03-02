@@ -75,3 +75,13 @@ $ ~/desktop/software/muscle5.1.win64.exe -in fily.fasta -out fily-muscle-aligned
 ### result
 false: unknown option in
 
+# 3/2
+## HW Aligning your own data
+### Aligning method/software choice: clustalw
+### Assumptions:
+1) sequences are down-weighted compared to how closely related they are to other sequences
+2) the program varies the gap penalties (GP) for sequences and positions
+### Limitations:
+1) The guide tree has a big impact on alignments
+2) Errors made early in the process persist since subsequent mergers never change the alignments they are merging together
+Process and code: see 2/18
