@@ -1,0 +1,29 @@
+---
+title: "B 563"
+author: "Haotian Deng"
+date: "2022/3/2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("adegenet", dep=TRUE)
+install.packages("phangorn", dep = TRUE)
+```
+
+```{r}
+library(ape)
+library(adegenet)
+library(phangorn)
+
+seq <- read.FASTA(file="../filY/fily-aligned.fasta",type = "AA")
+```
+
+```{r}
+D <-  dist.ml(seq)
+tre <- nj(D)
+tre <-ladderize (tre)
+
+plot (tre, cex =.6)
+title ("A simple NJ tree")
+```
