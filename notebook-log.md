@@ -85,3 +85,34 @@ false: unknown option in
 1) The guide tree has a big impact on alignments
 2) Errors made early in the process persist since subsequent mergers never change the alignments they are merging together
 Process and code: see 2/18
+
+# 3/4
+## Make a tree
+### change the phylip file into a fasta form
+code:
+$ grep ">" filY.fasta
+$ ~/desktop/software/clustalw2 -ALIGN -INFILE=fily.fasta -OUTFILE=fily-aligned.fasta -OUTPUT=FASTA
+### use R to make a tree
+code:
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("adegenet", dep=TRUE)
+install.packages("phangorn", dep = TRUE)
+``` (Install necaccary packages)
+
+```{r}
+library(ape)
+library(adegenet)
+library(phangorn)
+
+seq <- read.FASTA(file="../filY/fily-aligned.fasta",type = "AA")
+``` (Read the sequence as AA)
+
+```{r}
+D <-  dist.ml(seq)
+tre <- nj(D)
+tre <-ladderize (tre)
+
+plot (tre, cex =.6)
+title ("A simple NJ tree")
+``` (Make a simple evolution tree)
