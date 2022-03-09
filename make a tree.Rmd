@@ -16,7 +16,7 @@ library(ape)
 library(adegenet)
 library(phangorn)
 
-seq <- read.FASTA(file="../filY/fily-aligned.fasta",type = "AA")
+seq <- read.FASTA(file="../fliY/fliY-aligned.fasta",type = "AA")
 ```
 
 ```{r}
