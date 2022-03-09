@@ -116,3 +116,40 @@ tre <-ladderize (tre)
 plot (tre, cex =.6)
 title ("A simple NJ tree")
 ``` (Make a simple evolution tree)
+```
+
+# 3/9
+## Align the formal data (FliY protein sequences of 52 subtype of Bacillus)
+### Software: Git Bash & Clustalw
+code:
+$ pwd
+$ cd desktop/data/fily
+$ grep ">" filY.fasta
+$ ~/desktop/software/clustalw2 -ALIGN -INFILE=fily.fasta -OUTFILE=filY-aligned.fasta -OUTPUT=FASTA
+
+## Make a brief evolution tree
+### Software: R
+code:
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("adegenet", dep=TRUE)
+install.packages("phangorn", dep = TRUE)
+``` (Install necaccary packages)
+
+```{r}
+library(ape)
+library(adegenet)
+library(phangorn)
+
+seq <- read.FASTA(file="../fliY/fliY-aligned.fasta",type = "AA")
+``` (Read the sequence as AA)
+
+```{r}
+D <-  dist.ml(seq)
+tre <- nj(D)
+tre <-ladderize (tre)
+
+plot (tre, cex =.6)
+title ("A simple NJ tree")
+``` (Make a simple evolution tree)
+```
