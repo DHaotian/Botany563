@@ -153,3 +153,6 @@ plot (tre, cex =.6)
 title ("A simple NJ tree")
 ``` (Make a simple evolution tree)
 ```
+# 3/23
+Do nothing this week :(
+So many midterms
