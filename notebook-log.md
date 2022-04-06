@@ -156,3 +156,22 @@ title ("A simple NJ tree")
 # 3/23
 Do nothing this week :(
 So many midterms
+
+# 3/28
+## modify the tree's name
+1) creat and xlsx file
+2) type the name of strains in order
+3) save the file as a .csv file
+4) read the .csv file in R studio
+5) rename the strains
+
+## Core codes:
+rename = read.csv("fliY/rename.csv")
+rename$New_name
+
+
+library("ape")
+
+tre$tip.label <- rename$New_name
+plot(tre, cex =.6)
+
