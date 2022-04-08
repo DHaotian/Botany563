@@ -175,3 +175,13 @@ library("ape")
 tre$tip.label <- rename$New_name
 plot(tre, cex =.6)
 
+# 4/4
+## Maximum likelihood
+### Software choice: IQ-TREE (Online)
+http://iqtree.cibiv.univie.ac.at/?user=hdeng46@wisc.edu&jobid=220406214536
+Alinement file: fliY-aligned.fasta
+Sequence type: Protein
+Analysis results written to: 
+  IQ-TREE report:                fliY-aligned.fasta.iqtree
+  Maximum-likelihood tree:       fliY-aligned.fasta.treefile
+  Likelihood distances:          fliY-aligned.fasta.mldist
