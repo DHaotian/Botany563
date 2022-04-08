@@ -1,7 +1,15 @@
-# Phylogenetics software cheatsheet
 
-For this class, we will read the papers of many widely used software. For each software that you will use in your final project, you want to fill out the following information:
+# Software:
+1. IQ-TREE (Online version)
+  Description: W-IQ-TREE is an intuitive and user-friendly web interface and server for IQ-TREE, an efficient phylogenetic software for maximum likelihood analysis.
+  Strengths: IQ-TREE supports multiple sequence types (DNA, protein, codon, binary and morphology) in common alignment formats and a wide range of evolutionary models including mixture and partition models. 
+             IQ-TREE performs fast model selection, partition scheme finding, efficient tree reconstruction, ultrafast bootstrapping, branch tests, and tree topology tests.
+  Weaknesses: IQ-Tree isn’t guaranteed to find the best one
+              Difficult to compare for computing time against other methods
+              IQ-TREE with stopping rule improves performance, but can be slower than RAxML and PhyML, especially for AA alignments
+  Assumption: sequences: 200-800 (DNA), 50-600 (AA)
+              Alignment length: 4-2x #sequences
+              Proportion of gaps/unknown characters: ≤70% 
+              IQ-TREE1 → only unrooted trees | IQ-TREE2 → enables inference of rooted trees
+ User choices: 
 
-| Software | Description | Strengths | Weaknesses | Assumptions | User choices | 
-| IQ-TREE   | :---: | :---:       | :---:                     | :---: | :---: | 
-| :---:   | :---: | :---:       | :---:                     | :---: | :---: | 
