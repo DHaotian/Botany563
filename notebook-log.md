@@ -185,3 +185,44 @@ Analysis results written to:
   IQ-TREE report:                fliY-aligned.fasta.iqtree
   Maximum-likelihood tree:       fliY-aligned.fasta.treefile
   Likelihood distances:          fliY-aligned.fasta.mldist
+  
+ # 4/20
+ ## Try to do MrBayes
+ ### Create a PHYLIP file
+ Use a online ClustalW: https://www.genome.jp/tools-bin/clustalw#clustalw.phy
+ ### Convert the PHYLIP file into a Nexus file
+ Website: http://sequenceconversion.bugaco.com/converter/biology/sequences/fasta_to_nexus.php
+ ### Run MrBayes
+ 1) Make mbblock
+ "begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset shapepr=exp(1.0);
+ prset tratiopr=beta(1.0,1.0);
+ prset statefreqpr=dirichlet(1.0,1.0,1.0,1.0);
+ lset nst=2 rates=gamma ngammacat=4;
+ mcmcp ngen=10000 samplefreq=10 printfreq=100 nruns=1 nchains=3 savebrlens=yes;
+ outgroup Anacystis_nidulans;
+ mcmc;
+ sumt;
+end;"
+ insert the mbblock:
+ cat test.nex mbblock.txt > test-mb.nex
+ 2) check the direction to the software
+ $ cd desktop/Software/MrBayes-3.2.7-WIN/bin
+ $ ls
+ $ pwd
+ 3) Run the MrBayes
+ $ /c/Users/98663/desktop/Software/MrBayes-3.2.7-WIN/bin/mb.3.2.7-win64.exe test-mb.nex
+ result: Unrecognized Protein character '|'
+ 4) Fix the error: replace all "|" by "-"
+ $ sed -i 's/|/-/g' test-mb.nex 
+ 5) redo step 3
+ result: new error: Error when setting parameter "Tratiopr" (2)
+ 6) delet some lines in mbblock
+ prset tratiopr=beta(1.0,1.0);
+ prset statefreqpr=dirichlet(1.0,1.0,1.0,1.0);
+ outgroup Anacystis_nidulans;
+ 7) Run again:
+ Sucesses! Result is saved in git hub
+ 
